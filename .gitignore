@@ -1,0 +1,30 @@
+*.py[cod]
+
+# Unit test / coverage reports
+.coverage
+reports/
+
+# Geo JSONs
+config/geoJSONs/**/*.json
+
+# Geo CSV
+config/AdWords*.csv
+
+# Sphinx documentation
+docs/_build/
+
+# Automation and UI libraries
+bower_components
+node_modules
+
+# Editor files
+*.iml
+.idea/
+
+# Others
+*.log*
+*.out
+pip-log.txt
+backup/
+dist/
+.tmp/

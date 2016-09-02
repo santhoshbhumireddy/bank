@@ -1,0 +1,117 @@
+<div class="app-page">
+    <div class="page-container">
+        <!-- Main Content Start !-->
+        <div class="app-content">
+            <div class="app-content-wrapper">
+                <div class="inner_container inner_contianer_refined">
+                    <!-- header starts -->
+                    <!-- header ends -->
+                    <!-- partial_container starts -->
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div id="mainContainer" class="main_container preparer_container show-sidebar">
+                                <!--<div ng-show="showLoading" class="wait-loader-wrapper">-->
+                                    <!--<div class="wait-loader"></div>-->
+                                <!--</div>-->
+                                <div class="slideWrapper">
+                                    <div id="home" data-role="page" style="style:background:#000;">
+                                        <div role="main" class="ui-content">
+                                            <div class="content-header-row ">
+                                                <div class="col-md-8">
+                                                    <div ng-include=" 'utils/breadCrumbs.html' "></div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="right-section">
+                                                        <div class="actions">
+                                                            <a href ng-click="deposit()" class="ui-btn btn btn-primary btn-sm">Deposit</a>
+                                                            <a href ng-click="withdraw()" class="ui-btn btn btn-warning btn-sm">Withdraw</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row container-body">
+                                                <div style="width:900px;padding:25px;margin:25px;">
+                                                   <ul>
+                                                       <li>
+                                                           <div class="row">
+                                                               <div class="col-md-3">
+                                                                    <label>Account Number</b></label>
+                                                               </div>
+                                                               <div class="col-md-3">
+                                                                    <label>{{account.account_id}}</label>
+                                                               </div>
+                                                           </div>
+                                                       </li>
+                                                       <li>
+                                                           <div class="row">
+                                                               <div class="col-md-3">
+                                                                    <label>Account Name</label>
+                                                               </div>
+                                                               <div class="col-md-3">
+                                                                    <label>{{account.account_name}}</label>
+                                                               </div>
+                                                           </div>
+                                                       </li>
+                                                       <li>
+                                                           <div class="row">
+                                                               <div class="col-md-3">
+                                                                    <label>Account Type</label>
+                                                               </div>
+                                                               <div class="col-md-3">
+                                                                    <label>{{account.type}}</label>
+                                                               </div>
+                                                           </div>
+                                                       </li>
+                                                       <li>
+                                                           <div class="row">
+                                                               <div class="col-md-3">
+                                                                    <label>Balance</label>
+                                                               </div>
+                                                               <div class="col-md-3">
+                                                                    <label>{{account.balance}}</label>
+                                                               </div>
+                                                           </div>
+                                                       </li>
+                                                       <li>
+                                                           <div class="row">
+                                                               <div class="col-md-3">
+                                                                    <label>Status as of</label>
+                                                               </div>
+                                                               <div class="col-md-3">
+                                                                    <label>{{dt | date:'yyyy-MM-dd HH:mm:ss'}}</label>
+                                                               </div>
+                                                           </div>
+                                                       </li>
+                                                       <li>
+                                                           <div class="row">
+                                                               <div class="col-md-3">
+                                                                    <label>Currency</label>
+                                                               </div>
+                                                               <div class="col-md-3">
+                                                                    <label>INR</label>
+                                                               </div>
+                                                           </div>
+                                                       </li>
+                                                   </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- content actions -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- sidebar container -->
+                            <div class="side_container">
+                                <div class="panel-group">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- partial_container ends -->
+                </div>
+            </div>
+        </div>
+        <!-- Main Content Ends !-->
+
+    </div>
+</div>

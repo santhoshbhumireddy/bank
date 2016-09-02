@@ -1,0 +1,90 @@
+<div class="app-page">
+    <div class="page-container">
+        <!-- Main Content Start !-->
+        <div class="app-content">
+            <div class="app-content-wrapper">
+                <div class="inner_container inner_contianer_refined">
+                    <!-- header starts -->
+                    <!-- header ends -->
+                    <!-- partial_container starts -->
+                    <div class="container-fluid">
+                        <div>
+
+                        </div>
+                        <div class="row">
+                            <div id="mainContainer" class="main_container preparer_container show-sidebar">
+                                <!--<div ng-show="showLoading" class="wait-loader-wrapper">-->
+                                    <!--<div class="wait-loader"></div>-->
+                                <!--</div>-->
+                                <div class="slideWrapper">
+                                    <div id="home" data-role="page" style="style:background:#000;">
+                                        <div role="main" class="ui-content">
+                                            <div class="content-header-row ">
+                                                <div class="col-md-8">
+                                                    <div ng-include=" 'utils/breadCrumbs.html' "></div>
+                                                </div>
+                                                <!--<div class="col-md-4">-->
+                                                    <!--<div class="right-section">-->
+                                                        <!--<div class="actions">-->
+                                                            <!--<a href ng-click="addtransaction()" class="ui-btn btn btn-primary btn-sm">Add</a>-->
+                                                            <!--<a href ng-click="deletetransaction()" class="ui-btn btn btn-warning btn-sm">Delete</a>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
+                                            </div>
+                                            <div class="row container-body">
+                                                <div class="table-wrapper">
+                                                    <table datatable="ng" dt-options="dtOptions" dt-column-defs="dtColumnDefs" class="row-border hover" cellspacing="0" width="100%">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Time</th>
+                                                                <th>Reference No</th>
+                                                                <th>Transaction Remarks</th>
+                                                                <th>Deposited</th>
+                                                                <th>Credited</th>
+                                                                <th>Balance</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="transaction in transactions">
+                                                                <td>{{transaction.created_at}}</td>
+                                                                <td class="master-block">
+                                                                    <div class="inter-group-master-wrapper">
+                                                                        <div class="inter-group-master-content">
+                                                                            <a href="">
+                                                                                {{transaction.transaction_id}}
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>{{transaction.description}}</td>
+                                                                <td ng-if="transaction.type == 'DEPOSITED'">{{transaction.amount}}</td>
+                                                                <td ng-if="transaction.type != 'DEPOSITED'"></td>
+                                                                <td ng-if="transaction.type == 'CREDITED'">{{transaction.amount}}</td>
+                                                                <td ng-if="transaction.type != 'CREDITED'"></td>
+                                                                <td>{{transaction.total}}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- content actions -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- sidebar container -->
+                            <div class="side_container">
+                                <div class="panel-group">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- partial_container ends -->
+                </div>
+            </div>
+        </div>
+        <!-- Main Content Ends !-->
+
+    </div>
+</div>

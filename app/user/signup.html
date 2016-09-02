@@ -1,0 +1,86 @@
+<div class="row modal-body">
+    <div role="main" class="ui-content  editableSection modal-form  modal-container modal-container-login">
+        <form name="signUpForm" novalidate>
+            <div class="row fields-section">
+                <div class="col-sm-12 ">
+                    <div class="inner-row">
+                        <div class="form-header">
+                            <h2><span class="glyphicon" aria-hidden="true"></span>Take Account</h2>
+                        </div>
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-wrapper-form">
+                                        <div class="form-group">
+                                            <label>User Name (*)</label>
+                                            <input ng-model="userInfo.user_name" name="userName" type="text" class="form-control input-sm" ng-minlength="6" ng-maxlength="32" required>
+                                        </div>
+                                        <div ng-if="validateFormFlag || signUpForm.userName.$touched" ng-messages="signUpForm.userName.$error">
+                                            <div ng-message="required">User Name required</div>
+                                            <div ng-message="minlength">Too short</div>
+                                            <div ng-message="maxlength">Too Long</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-wrapper-form">
+                                        <div class="form-group">
+                                            <label>Login Password (*)</label>
+                                            <input ng-model="userInfo.password" name="password" type="password" class="form-control input-sm" ng-minlength="8" ng-maxlength="32" required>
+                                        </div>
+                                        <div ng-if="validateFormFlag || signUpForm.password.$touched" ng-messages="signUpForm.password.$error">
+                                            <div ng-message="required">Password required</div>
+                                            <div ng-message="minlength">Too short</div>
+                                            <div ng-message="maxlength">Too Long</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-wrapper-form">
+                                        <div class="form-group">
+                                            <label>Transaction Password (*)</label>
+                                            <input ng-model="userInfo.transaction_password" name="transPassword" type="password" class="form-control input-sm" ng-minlength="8" ng-maxlength="32" required>
+                                        </div>
+                                        <div ng-if="validateFormFlag || signUpForm.transPassword.$touched" ng-messages="signUpForm.transPassword.$error">
+                                            <div ng-message="required">Transaction Password required</div>
+                                            <div ng-message="minlength">Too short</div>
+                                            <div ng-message="maxlength">Too Long</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-wrapper-form">
+                                        <div class="form-group">
+                                            <label>PAN</label>
+                                            <input ng-model="userInfo.pan" name="pan" type="text" class="form-control input-sm">
+                                        </div>
+                                    </div>
+                                    <div class="col-wrapper-form">
+                                        <div class="form-group">
+                                            <label>Adhar No</label>
+                                            <input ng-model="userInfo.adhar_number" name="adharNumber" type="text" class="form-control input-sm">
+                                        </div>
+                                    </div>
+                                    <div class="col-wrapper-form">
+                                        <div class="form-group">
+                                            <label>Mobile No</label>
+                                            <input ng-model="userInfo.mobile_number" name="mobileNumber" type="text" class="form-control input-sm">
+                                        </div>
+                                    </div>
+                                    <div class="col-wrapper-form">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input ng-model="userInfo.email" name="email" type="text" class="form-control input-sm">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-btn ui-btn-b action-section action-section-login">
+                <div class="col-md-12 modal-header-right">
+                    <div class="actionWrapper">
+                        <button ng-hide="dirty" class="btn btn-primary" ng-click="signUp()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

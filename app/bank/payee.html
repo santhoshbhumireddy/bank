@@ -1,0 +1,100 @@
+<div class="app-page">
+    <div class="page-container">
+        <!-- Main Content Start !-->
+        <div class="app-content">
+            <div class="app-content-wrapper">
+                <div class="inner_container inner_contianer_refined">
+                    <!-- header starts -->
+                    <!-- header ends -->
+                    <!-- partial_container starts -->
+                    <div class="container-fluid">
+                        <div>
+
+                        </div>
+                        <div class="row">
+                            <div id="mainContainer" class="main_container preparer_container show-sidebar">
+                                <!--<div ng-show="showLoading" class="wait-loader-wrapper">-->
+                                    <!--<div class="wait-loader"></div>-->
+                                <!--</div>-->
+                                <div class="slideWrapper">
+                                    <div id="home" data-role="page" style="style:background:#000;">
+                                        <div role="main" class="ui-content">
+                                            <div class="content-header-row ">
+                                                <div class="col-md-10">
+                                                    <div ng-include=" 'utils/breadCrumbs.html' "></div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="right-section">
+                                                        <div class="actions" style="margin-left:200px;">
+                                                            <a href ng-click="addPayee()" class="ui-btn btn btn-primary btn-sm">Add Payee</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row container-body">
+                                                <div class="table-wrapper">
+                                                    <table datatable="ng" dt-options="dtOptions" dt-column-defs="dtColumnDefs" class="row-border hover" cellspacing="0" width="100%">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Account Id</th>
+                                                                <th>Name</th>
+                                                                <th>Bank</th>
+                                                                <th>IFSC Code</th>
+                                                                <th>Type</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="payee in payees">
+                                                                <td class="master-block">
+                                                                    <div class="inter-group-master-wrapper">
+                                                                        <div class="inter-group-master-content">
+                                                                            <a href="">
+                                                                                {{payee.account_id}}
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>{{payee.nick_name}}</td>
+                                                                <td>{{payee.bank}}</td>
+                                                                <td>{{payee.ifsc_code}}</td>
+                                                                <td>{{payee.type}}</td>
+                                                                <td>
+                                                                    <a href="" tooltip="Make Payment"
+                                                                       tooltip-placement="bottom"
+                                                                       class="edit_policy action_icon"
+                                                                       ng-click="makePayment(payee)">
+                                                                        <span class="glyphicon glyphicon-transfer" aria-hidden="true"></span>
+                                                                    </a>
+                                                                    <a href="" tooltip="Delete"
+                                                                       tooltip-placement="bottom"
+                                                                       class="edit_policy action_icon"
+                                                                       ng-click="deletePayee(payee)">
+                                                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- content actions -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- sidebar container -->
+                            <div class="side_container">
+                                <div class="panel-group">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- partial_container ends -->
+                </div>
+            </div>
+        </div>
+        <!-- Main Content Ends !-->
+
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="row modal-body">
+    <div role="main" class="ui-content  editableSection modal-form  modal-container modal-container-login">
+        <form name="transactionForm" novalidate>
+            <div class="row fields-section">
+                <div class="col-sm-12 ">
+                    <div class="inner-row">
+                        <div class="form-header">
+                            <h2 ng-show="transactionType=='Deposit'"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Deposit</h2>
+                            <h2 ng-show="transactionType=='Withdraw'"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Withdraw</h2>
+                            <h2 ng-show="transactionType=='ThirdParty'"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Transfer Funds</h2>
+                        </div>
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-wrapper-form">
+                                        <div class="form-group">
+                                            <label>Amount (*)</label>
+                                            <input ng-model="transactionInfo.amount" name="amount" type="text" ng-pattern="/^[0-9.]{1,16}$/" class="form-control input-sm" required>
+                                        </div>
+                                        <div ng-if="validateFormFlag || transactionForm.amount.$touched" ng-messages="transactionForm.amount.$error">
+                                            <div ng-message="required">Transaction Amount required</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-wrapper-form">
+                                        <div class="form-group">
+                                            <label>Remarks</label>
+                                            <input ng-model="transactionInfo.description" name="remarks" type="text" class="form-control input-sm">
+                                        </div>
+                                    </div>
+                                    <div class="col-wrapper-form" ng-show="transactionType=='Withdraw' || transactionType=='ThirdParty'">
+                                        <div class="form-group">
+                                            <label>Transaction Password (*)</label>
+                                            <input ng-model="transactionInfo.transaction_password" name="transPassword" type="password"
+                                                   class="form-control input-sm" ng-minlength="8" ng-maxlength="32"
+                                                   ng-required="transactionType=='Withdraw' || transactionType=='ThirdParty'">
+                                        </div>
+                                        <div ng-if="validateFormFlag || transactionForm.transPassword.$touched" ng-messages="transactionForm.transPassword.$error">
+                                            <div ng-message="required">Transaction Password required</div>
+                                            <div ng-message="minlength">Too short</div>
+                                            <div ng-message="maxlength">Too Long</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-btn ui-btn-b action-section action-section-login">
+                <div class="col-md-12 modal-header-right">
+                    <div class="actionWrapper">
+                        <button ng-hide="dirty" class="btn btn-primary" ng-click="makeTransaction()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

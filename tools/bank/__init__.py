@@ -1,0 +1,1 @@
+"""Internal Query Tool application"""

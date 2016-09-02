@@ -1,0 +1,45 @@
+<div class="row modal-body">
+    <div role="main" class="ui-content  editableSection modal-form  modal-container modal-container-login">
+        <form name="logInForm" novalidate>
+            <div class="row fields-section">
+                <div class="col-sm-12 ">
+                    <div class="inner-row">
+                        <div class="form-header">
+                            <h2><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</h2>
+                        </div>
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-wrapper-form">
+                                        <div class="form-group">
+                                            <label>User Name</label>
+                                            <input ng-model="userName" name="email" type="text" class="form-control input-sm" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-wrapper-form">
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input ng-model="password" name="password" type="password" class="form-control input-sm" required>
+                                        </div>
+                                    </div>
+                                    <!--<div class="class-checkbox-wrapper">-->
+                                        <!--<input type="checkbox" id="check1" class="checkBoxStyle" ng-model="remember">-->
+                                        <!--<label class="checkBoxText" for="check1">Remember me</label>-->
+                                    <!--</div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-btn ui-btn-b action-section action-section-login">
+                <div class="col-md-12 modal-header-right">
+                    <div class="actionWrapper">
+                        <button ng-hide="dirty" class="btn btn-primary" ng-click="logIn()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

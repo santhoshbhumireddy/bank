@@ -1,0 +1,10 @@
+alias gopen='gnome-open'
+
+alias nosetests='nosetests -v --with-doctest --with-xunit --traverse-namespace \
+--with-coverage --cover-package=handlers,tools --cover-xml \
+--xunit-file=test/reports/nosetests.xml --cover-xml-file=test/reports/coverage.xml'
+
+alias cissh='ssh -i ~/.ssh/imaginea_id_rsa imaginea@imaginea_ci.a3cloud.net'
+alias prodssh='ssh -i ~/.ssh/imaginea_id_rsa imaginea@imaginea_prod.a3cloud.net'
+alias devssh='ssh -i ~/.ssh/imaginea_id_rsa imaginea@imaginea_dev.a3cloud.net'
+alias qassh='ssh -i ~/.ssh/imaginea_id_rsa imaginea@imaginea_test.a3cloud.net'

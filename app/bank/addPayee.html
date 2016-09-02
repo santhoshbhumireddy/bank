@@ -1,0 +1,95 @@
+<div class="row modal-body">
+    <div role="main" class="ui-content  editableSection modal-form  modal-container modal-container-login">
+        <form name="addPayeeForm" novalidate>
+            <div class="row fields-section">
+                <div class="col-sm-12 ">
+                    <div class="inner-row">
+                        <div class="form-header">
+                            <h2><span class="glyphicon" aria-hidden="true"></span>Add Payee</h2>
+                        </div>
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-wrapper-form">
+                                        <div class="form-group">
+                                            <label>Nick Name (*)</label>
+                                            <input ng-model="payeeInfo.nick_name" name="nickName" type="text" class="form-control input-sm" ng-minlength="3" ng-maxlength="32" required>
+                                        </div>
+                                        <div ng-if="validateFormFlag || addPayeeForm.nickName.$touched" ng-messages="addPayeeForm.nickName.$error">
+                                            <div ng-message="required">Nick Name required</div>
+                                            <div ng-message="minlength">Too short</div>
+                                            <div ng-message="maxlength">Too Long</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-wrapper-form">
+                                        <div class="form-group">
+                                            <label>Account Name (*)</label>
+                                            <input ng-model="payeeInfo.account_name" name="accountName" type="text" class="form-control input-sm" ng-minlength="6" ng-maxlength="32" required>
+                                        </div>
+                                        <div ng-if="validateFormFlag || addPayeeForm.accountName.$touched" ng-messages="addPayeeForm.accountName.$error">
+                                            <div ng-message="required">Account Name required</div>
+                                            <div ng-message="minlength">Too short</div>
+                                            <div ng-message="maxlength">Too Long</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-wrapper-form">
+                                        <div class="form-group">
+                                            <label>Account Id (*)</label>
+                                            <input placeholder="Only digits allowed" ng-model="payeeInfo.account_id" name="accountID" type="text" ng-pattern="/^[0-9]{10,16}$/" class="form-control input-sm" ng-minlength="10" ng-maxlength="32" required>
+                                        </div>
+                                        <div ng-if="validateFormFlag || addPayeeForm.accountID.$touched" ng-messages="addPayeeForm.accountID.$error">
+                                            <div ng-message="required">Account ID required</div>
+                                            <div ng-message="minlength">Too short</div>
+                                            <div ng-message="maxlength">Too Long</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-wrapper-form">
+                                        <div class="form-group">
+                                            <label>Bank (*)</label>
+                                            <input ng-model="payeeInfo.bank" name="bank" type="text" class="form-control input-sm" ng-minlength="3" ng-maxlength="32" required>
+                                        </div>
+                                        <div ng-if="validateFormFlag || addPayeeForm.bank.$touched" ng-messages="addPayeeForm.bank.$error">
+                                            <div ng-message="required">Bank Name required</div>
+                                            <div ng-message="minlength">Too short</div>
+                                            <div ng-message="maxlength">Too Long</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-wrapper-form">
+                                        <div class="form-group">
+                                            <label>IFSC Code (*)</label>
+                                            <input ng-model="payeeInfo.ifsc_code" name="ifscCode" type="text" class="form-control input-sm" ng-minlength="6" ng-maxlength="32" required>
+                                        </div>
+                                        <div ng-if="validateFormFlag || addPayeeForm.ifscCode.$touched" ng-messages="addPayeeForm.ifscCode.$error">
+                                            <div ng-message="required">Ifsc Code required</div>
+                                            <div ng-message="minlength">Too short</div>
+                                            <div ng-message="maxlength">Too Long</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-wrapper-form">
+                                        <div class="form-group">
+                                            <label>Transaction Type (*)</label>
+                                            <select class='form-control' name='transactionType' ng-model="payeeInfo.type" ng-options="type for type in transactionTypes" required>
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                        <div ng-if="validateFormFlag || addPayeeForm.transactionType.$touched" ng-messages="addPayeeForm.transactionType.$error">
+                                            <div ng-message="required">Transaction Type required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-btn ui-btn-b action-section action-section-login">
+                <div class="col-md-12 modal-header-right">
+                    <div class="actionWrapper">
+                        <button ng-hide="dirty" class="btn btn-primary" ng-click="add()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

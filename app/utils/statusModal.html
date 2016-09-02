@@ -1,0 +1,12 @@
+<div class="row modal-body">
+    <h3 ng-show="info.heading">{{info.heading}}</h3>
+    <p ng-show="!info.compile" ng-bind-html="info.message" class="mt-1"></p>
+    <p ng-show="info.compile" compile="info.message" class="mt-1"></p>
+    <div align="center" class="mt-2" ng-show="info.alert">
+        <button class="btn btn-primary margin-15" ng-click="deleteStatus(true)">Yes</button>
+        <button class="btn btn-primary margin-15" ng-click="deleteStatus(false)">No</button>
+    </div>
+</div>
+<div class="modal-footer" ng-hide="info.alert">
+    <button class="ui-btn btn btn-primary btn-sm" ng-click="close()">Close</button>
+</div>
