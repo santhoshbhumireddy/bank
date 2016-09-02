@@ -72,16 +72,6 @@ def recreate_db():
         db_api.create_tables()
 
 
-def insert_advertiser():
-    """Temporary req."""
-    logger.info('Creating advertiser table entry for WebMD')
-    with DatabaseAPI() as db_api:
-        advertiser = Advertiser()
-        advertiser.name = 'WebMD'
-        advertiser.id = WEBMD_ADVERTISER_ID
-        db_api.insert_or_update(advertiser)
-
-
 def query_model_during_export(db_obj, model):
     """Retrieves query for existing columns of the table modified.
 
@@ -250,18 +240,6 @@ def backup_db():
     return export
 
 
-def populate_geo_config():
-    """Populate APN geo configuration JSON files if not present."""
-    fetch_geo = False
-    for type in GEO_TYPES.iterkeys():
-        if not exists(join(APN_GEO_JSONS, 'all_' + type + '.json')):
-            fetch_geo = True
-            break
-    if fetch_geo:
-        fetch_write_apn_info()
-        generate_postal_code_JSON()
-
-
 def preserve_all():
     """Recreates database preserving all tables"""
     try:
@@ -280,11 +258,6 @@ def preserve_none_and_sync():
     """Recreating database without preserving existing data
     and syncing campaigns"""
     recreate_db()
-    insert_advertiser()
-    sync_segments()
-    sync_creatives()
-    sync_campaigns('apn_console')
-    populate_geo_config()
     # with DatabaseAPI() as db_obj:
     #     initialize_roles(db_obj)
 

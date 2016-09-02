@@ -224,7 +224,6 @@ angular.module('MyBankApp')
                $scope.transactionInfo.src_account_id = $scope.srcAccountID;
                $scope.transactionInfo.dst_account_id = $scope.dstAccountID;
                $scope.transactionInfo.transaction_type = $scope.transactionType;
-               console.log($scope.transactionInfo);
                var payload = {
                     'transaction_info': $scope.transactionInfo
                };
